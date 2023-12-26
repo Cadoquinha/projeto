@@ -32,10 +32,11 @@ body {
   */
   /* background: color image repeat position/size */
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 body * {
 font-family: 'Inter', sans-serif;
-color: white;
+color: var(--text-color);
 }
 
 #container {
@@ -87,19 +88,19 @@ color: white;
   z-index: 1;
   transform: translateY(-50%);
 
-  /* animation: slide-back 0.2s; */
+  animation: slide-back 0.2s; /*não precisa aplicar o forwards porque já existe a propriedade final que é left:0 */
 }
 
 .light #switch button {
-  /*animation: slide-in 0.2s forwards;*/
+  animation: slide-in 0.2s forwards;
 
-  right: 0;
-  left: initial;
+  /*right: 0;
+  left: initial;*/
 }
 
-/*#switch button:hover {
+#switch button:hover {
   outline: 8px solid var(--highlight-color);
-}*/
+}
 
 #switch span {
   display: block;
@@ -190,20 +191,20 @@ footer {
 }
 
 /* animation */
-/* @keyframes slide-in { */
-  /* from { */
-    /* left: 0;
-  } */
-  /* to { */
-    /* left: 50%; */
-  /* } */
-/* } */
-
-/* @keyframes slide-back { */
-  /* from { */
-    /* left: 50%; */
-  /* } */
-  /* to { */
-    /* left: 0; */
-  /* } */
-/* } */
+/* slide-in pode ser qualquer nome*/
+@keyframes slide-in { 
+  from { 
+    left: 0;
+  } 
+  to {
+     left: 50%;
+   } 
+} 
+@keyframes slide-back { 
+   from { 
+     left: 50%; 
+   } 
+   to { 
+     left: 0; 
+   } 
+}
